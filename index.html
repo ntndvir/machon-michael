@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ════════════════════════════════════════════════════════════════
+     מכון מיכאל · דף נחיתה — ריפוי בעיסוק לילדים
+     להחלפת תמונות: צרו תיקייה בשם images/ לצד הקובץ והעלו אליה
+     hero.jpg · erez.jpg · clinic-1.jpg · clinic-2.jpg · clinic-3.jpg
+     לפני העלייה מוצג placeholder מעוצב עם הטקסט החלופי (alt).
+     ════════════════════════════════════════════════════════════════ -->
+
+<title>מכון מיכאל | ריפוי בעיסוק לילדים — שוהם</title>
+<meta name="description" content="מכון מיכאל — קליניקה לריפוי בעיסוק לילדים בשוהם. אבחון וטיפול במוטוריקה, גרפו-מוטוריקה, ויסות חושי, תפקודי יומיום וטיפול בילדים על הרצף האוטיסטי. מפוקח ע״י קופות החולים, משנת 2012.">
+<meta name="theme-color" content="#FBF6EE">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:site_name" content="מכון מיכאל">
+<meta property="og:title" content="מכון מיכאל | ריפוי בעיסוק לילדים">
+<meta property="og:description" content="הכל מתחיל בחיבור. אבחון וטיפול בריפוי בעיסוק לילדים בשוהם. מפוקח ע״י קופות החולים, פעיל משנת 2012.">
+<meta property="og:image" content="images/hero.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&family=Rubik:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --cream:#FBF6EE;
+  --cream-2:#F3EAD9;
+  --ink:#2D3A38;
+  --ink-soft:#5A6B66;
+  --primary:#3E8C84;
+  --primary-deep:#2E6E67;   /* גוון כהה יותר — לטקסט/כפתורים, לעמידה בתקן ניגודיות */
+  --accent:#E8836B;
+  --accent-deep:#C9543B;
+  --accent-soft:#FBE3DB;
+  --primary-soft:#E2F1EE;
+  --white:#ffffff;
+  --wa:#1FA855;            /* ירוק וואטסאפ מעומעם לניגודיות תקינה עם לבן */
+  --shadow:0 22px 50px -26px rgba(46,110,103,.42);
+  --shadow-soft:0 12px 28px -18px rgba(45,58,56,.30);
+  --r-lg:24px;
+  --r-md:18px;
+  --r-sm:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Assistant',system-ui,sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,.font-display{font-family:'Rubik',system-ui,sans-serif;line-height:1.2}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+ul{list-style:none}
+
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+
+/* ── Skip link (נגישות) ── */
+.skip{position:absolute;right:-9999px;top:8px;background:var(--primary-deep);color:#fff;
+  padding:10px 18px;border-radius:12px;z-index:999;font-weight:700}
+.skip:focus{right:16px}
+
+/* ── Focus visibility (ניווט מקלדת) ── */
+:focus-visible{outline:3px solid var(--primary-deep);outline-offset:3px;border-radius:6px}
+
+/* ── Image placeholders ── */
+.ph{
+  width:100%;height:100%;object-fit:cover;display:block;
+  background:linear-gradient(135deg,var(--primary-soft),var(--accent-soft));
+  color:var(--primary-deep);font-family:'Rubik';font-weight:600;
+  min-height:inherit;
+}
+
+/* ── Buttons ── */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:15px 28px;border-radius:46px;font-weight:700;font-size:1.12rem;
+  font-family:'Rubik';cursor:pointer;border:2px solid transparent;
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+}
+.btn svg{width:22px;height:22px;flex-shrink:0}
+.btn-call{background:var(--primary-deep);color:#fff;box-shadow:var(--shadow-soft)}
+.btn-call:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:var(--shadow-soft)}
+.btn-wa:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.btn-ghost{background:var(--white);color:var(--primary-deep);border-color:#E4DAC7;box-shadow:var(--shadow-soft)}
+.btn-ghost:hover{transform:translateY(-3px)}
+
+/* ── Section rhythm ── */
+.sec{padding:84px 0}
+.sec-head{max-width:660px;margin:0 auto 52px;text-align:center}
+.eyebrow{display:inline-block;color:var(--accent-deep);font-weight:700;
+  letter-spacing:.5px;font-size:.95rem;margin-bottom:10px}
+.sec-head h2{font-size:clamp(1.8rem,4.4vw,2.6rem);font-weight:800;letter-spacing:-.5px}
+.sec-head p{color:var(--ink-soft);font-size:1.12rem;margin-top:12px}
+
+/* ═══ Header ═══ */
+.site-head{
+  position:sticky;top:0;z-index:90;
+  background:rgba(251,246,238,.86);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(45,58,56,.07);
+}
+.head-row{display:flex;align-items:center;justify-content:space-between;min-height:70px;gap:16px}
+.brand{display:flex;align-items:center;gap:11px;font-family:'Rubik';font-weight:700;
+  font-size:1.28rem;color:var(--ink)}
+.brand .logo{
+  width:42px;height:42px;border-radius:13px;flex-shrink:0;
+  background:var(--primary);display:grid;place-items:center;
+  color:#fff;font-family:'Rubik';font-weight:800;font-size:1.25rem;
+  box-shadow:0 6px 14px -6px rgba(62,140,132,.7);
+}
+.brand small{display:block;font-family:'Assistant';font-weight:500;
+  font-size:.78rem;color:var(--ink-soft);margin-top:-3px}
+.head-nav{display:none;gap:26px;align-items:center;font-weight:600;color:var(--ink-soft)}
+.head-nav a{transition:color .2s}
+.head-nav a:hover{color:var(--primary-deep)}
+.head-call{display:none}
+
+/* ═══ Hero ═══ */
+.hero{position:relative;padding:54px 0 70px;overflow:hidden}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;z-index:0;filter:blur(6px)}
+.hero::before{width:340px;height:340px;background:radial-gradient(circle,#CFE9E3,transparent 70%);top:-120px;right:-110px;opacity:.7}
+.hero::after{width:300px;height:300px;background:radial-gradient(circle,#FBDDD2,transparent 70%);bottom:-130px;left:-100px;opacity:.7}
+.hero-inner{position:relative;z-index:2}
+.hero-pill{display:inline-flex;align-items:center;gap:9px;background:var(--white);
+  color:var(--primary-deep);padding:8px 16px;border-radius:40px;font-weight:700;
+  font-size:.92rem;box-shadow:var(--shadow-soft);margin-bottom:20px}
+.hero-pill .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.hero h1{font-size:clamp(2.6rem,9vw,4.6rem);font-weight:800;letter-spacing:-1px;margin-bottom:6px}
+.hero h1 .mark{position:relative;color:var(--primary-deep);white-space:nowrap}
+.hero h1 .mark::after{content:"";position:absolute;right:0;left:0;bottom:.08em;height:.22em;
+  background:var(--accent);opacity:.38;border-radius:8px;z-index:-1}
+.hero .lead{font-size:1.22rem;color:var(--ink-soft);max-width:560px;margin:18px 0 30px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+.hero-figure{margin-top:46px;border-radius:var(--r-lg);overflow:hidden;
+  box-shadow:var(--shadow);min-height:300px;position:relative}
+.hero-figure .ph{min-height:300px;font-size:1.05rem;padding:24px;text-align:center;align-content:center}
+
+/* ═══ Trust strip ═══ */
+.trust{background:var(--primary-deep);color:#fff}
+.trust-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px 18px;padding:34px 0}
+.trust-item{text-align:center}
+.trust-item .n{font-family:'Rubik';font-weight:800;font-size:1.9rem;color:#fff;line-height:1.1}
+.trust-item .l{color:rgba(255,255,255,.82);font-size:.98rem;margin-top:4px}
+
+/* ═══ Services ═══ */
+.cards{display:grid;grid-template-columns:1fr;gap:20px}
+.card{background:var(--white);border-radius:var(--r-lg);padding:28px 26px;
+  box-shadow:var(--shadow-soft);border:1px solid rgba(45,58,56,.05);
+  transition:transform .22s ease,box-shadow .22s ease}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.card .ic{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;
+  font-size:1.6rem;margin-bottom:16px}
+.card h3{font-size:1.24rem;font-weight:700;margin-bottom:8px}
+.card p{color:var(--ink-soft);font-size:1rem}
+.ic-a{background:var(--primary-soft)}.ic-b{background:#FFF1DC}.ic-c{background:var(--accent-soft)}
+.ic-d{background:#E8F0DC}.ic-e{background:#E5EEF6}.ic-f{background:#F0E8F7}
+
+/* ═══ Autism focus ═══ */
+.autism{background:var(--cream-2);overflow:hidden}
+.autism-grid{display:grid;grid-template-columns:1fr;gap:30px;align-items:center}
+.autism-copy .eyebrow{color:var(--accent-deep)}
+.autism-copy h2{font-size:clamp(1.7rem,4.4vw,2.5rem);font-weight:800;margin-bottom:14px}
+.autism-copy p{color:var(--ink-soft);font-size:1.1rem}
+.autism-list{display:grid;grid-template-columns:1fr;gap:12px;margin-top:8px}
+.autism-list li{display:flex;align-items:flex-start;gap:12px;background:var(--white);
+  border-radius:var(--r-sm);padding:16px 18px;box-shadow:var(--shadow-soft);
+  border-right:4px solid var(--primary);font-weight:600}
+.autism-list .check{color:var(--primary-deep);font-weight:800;flex-shrink:0;margin-top:1px}
+.autism-list span.txt{font-weight:500;color:var(--ink-soft)}
+
+/* ═══ About Erez ═══ */
+.about-grid{display:grid;grid-template-columns:1fr;gap:34px;align-items:center}
+.about-figure{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);min-height:340px}
+.about-figure .ph{min-height:340px;background:linear-gradient(135deg,#FBDDD2,#F2C9A6)}
+.about-copy h2{font-size:clamp(1.7rem,4.4vw,2.4rem);font-weight:800;margin-bottom:14px}
+.about-copy h2 .mark{color:var(--primary-deep)}
+.about-copy p{color:var(--ink-soft);font-size:1.08rem;margin-bottom:14px}
+.about-copy .quote{border-right:4px solid var(--accent);padding-right:16px;
+  color:var(--ink);font-style:italic;font-size:1.1rem}
+.creds{display:flex;flex-direction:column;gap:10px;margin-top:22px}
+.creds li{display:flex;align-items:center;gap:12px;font-weight:600}
+.creds .b{width:34px;height:34px;border-radius:10px;background:var(--primary-soft);
+  display:grid;place-items:center;flex-shrink:0;color:var(--primary-deep);font-size:1.05rem}
+
+/* ═══ Testimonials ═══ */
+.t-cards{columns:1;column-gap:22px}
+.t-card{background:var(--white);border-radius:var(--r-lg);padding:28px 26px;
+  box-shadow:var(--shadow-soft);position:relative;
+  break-inside:avoid;width:100%;margin-bottom:22px}
+.t-card .stars{color:var(--accent);letter-spacing:3px;margin-bottom:12px;font-size:1.05rem}
+.t-card blockquote{color:var(--ink);font-size:1.12rem;margin-bottom:16px}
+.t-card .who{font-family:'Rubik';font-weight:700;color:var(--primary-deep)}
+.t-card .who small{display:block;font-family:'Assistant';font-weight:500;
+  color:var(--ink-soft);font-size:.9rem}
+
+/* ═══ Clinic ═══ */
+.clinic{background:var(--cream-2)}
+.clinic-gallery{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:30px}
+.clinic-gallery figure{border-radius:var(--r-md);overflow:hidden;box-shadow:var(--shadow-soft);min-height:200px}
+.clinic-gallery .ph{min-height:200px}
+.clinic-gallery .g2 .ph{background:linear-gradient(135deg,#FBDDD2,var(--accent-soft))}
+.clinic-gallery .g3 .ph{background:linear-gradient(135deg,#E8F0DC,var(--primary-soft))}
+.clinic-text{max-width:720px;margin:0 auto;text-align:center;color:var(--ink-soft);font-size:1.12rem}
+
+/* ═══ Contact ═══ */
+.contact-grid{display:grid;grid-template-columns:1fr;gap:26px}
+.contact-card{background:var(--white);border-radius:var(--r-lg);padding:30px 26px;box-shadow:var(--shadow-soft)}
+.contact-card h3{font-size:1.3rem;margin-bottom:6px}
+.contact-line{display:flex;align-items:center;gap:14px;margin:14px 0;font-size:1.08rem}
+.contact-line .ib{width:46px;height:46px;border-radius:13px;background:var(--primary-soft);
+  display:grid;place-items:center;font-size:1.2rem;flex-shrink:0}
+.contact-line a{font-weight:700;color:var(--primary-deep)}
+.branch{border-top:1px solid rgba(45,58,56,.1);padding-top:18px;margin-top:18px}
+.branch:first-of-type{border-top:none;padding-top:0;margin-top:0}
+.branch h4{font-family:'Rubik';font-size:1.1rem;margin-bottom:4px}
+.branch .addr{font-weight:600}
+.branch .dir{color:var(--ink-soft);font-size:.98rem;margin-top:4px}
+.branch .map-link{display:inline-block;margin-top:8px;color:var(--primary-deep);
+  font-weight:700;border-bottom:2px solid var(--accent)}
+.map-embed{width:100%;height:240px;border:0;border-radius:var(--r-md);
+  margin-top:16px;display:block;box-shadow:var(--shadow-soft)}
+.hours{display:flex;flex-direction:column;gap:6px;margin-top:6px}
+.hours div{display:flex;justify-content:space-between;gap:14px;
+  border-bottom:1px dashed rgba(45,58,56,.14);padding:6px 0}
+.hours div span:last-child{font-weight:700}
+
+/* ═══ Footer ═══ */
+.site-foot{background:var(--ink);color:rgba(255,255,255,.72);padding:40px 0 96px;text-align:center}
+.site-foot .brand{justify-content:center;color:#fff;margin-bottom:14px}
+.site-foot .brand small{color:rgba(255,255,255,.6)}
+.foot-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;font-weight:600}
+.foot-links a:hover{color:#fff}
+.site-foot .copy{font-size:.88rem;opacity:.7}
+
+/* ═══ Sticky mobile CTA bar ═══ */
+.cta-bar{
+  position:fixed;bottom:0;right:0;left:0;z-index:95;
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(251,246,238,.95);backdrop-filter:blur(10px);
+  border-top:1px solid rgba(45,58,56,.1);
+}
+.cta-bar .btn{padding:13px 12px;font-size:1.05rem;width:100%}
+
+/* ═══ Floating WhatsApp (דסקטופ) ═══ */
+.wa-float{
+  position:fixed;left:22px;bottom:22px;z-index:96;
+  width:60px;height:60px;border-radius:50%;background:var(--wa);
+  display:none;place-items:center;
+  box-shadow:0 14px 30px -8px rgba(31,168,85,.65);transition:transform .2s ease}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:32px;height:32px;fill:#fff}
+
+/* ═══ Responsive ═══ */
+@media(min-width:600px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .trust-grid{grid-template-columns:repeat(4,1fr)}
+  .autism-list{grid-template-columns:1fr 1fr}
+  .t-cards{grid-template-columns:1fr 1fr}
+  .clinic-gallery{grid-template-columns:2fr 1fr 1fr}
+  .clinic-gallery .g1{grid-row:span 2}
+  .clinic-gallery .g1 .ph{min-height:416px}
+  .contact-grid{grid-template-columns:1fr 1fr}
+  .t-cards{columns:2}
+}
+@media(min-width:860px){
+  .hero{padding:72px 0 84px}
+  .hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  .hero-figure{margin-top:0}
+  .hero-figure .ph,.hero-figure{min-height:400px}
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .autism-grid{grid-template-columns:1fr 1.1fr;gap:48px}
+  .about-grid{grid-template-columns:.85fr 1.15fr;gap:50px}
+  .head-nav{display:flex}
+  .head-call{display:inline-flex}
+  .t-cards{columns:3}
+  .cta-bar{display:none}           /* סרגל דביק רק במובייל */
+  .wa-float{display:grid}          /* כפתור צף רק בדסקטופ */
+  .site-foot{padding-bottom:40px}
+}
+
+/* ── Reveal on scroll ── */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .btn,.card{transition:none}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">דלגו לתוכן המרכזי</a>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="#" aria-label="מכון מיכאל — לדף הבית">
+      <span class="logo" aria-hidden="true">מ</span>
+      <span>מכון מיכאל<small>ריפוי בעיסוק לילדים</small></span>
+    </a>
+    <nav class="head-nav" aria-label="ניווט ראשי">
+      <a href="#services">תחומי טיפול</a>
+      <a href="#autism">אוטיזם</a>
+      <a href="#about">על ארז</a>
+      <a href="#testimonials">המלצות</a>
+      <a href="#contact">צור קשר</a>
+    </nav>
+    <a class="btn btn-call head-call" href="tel:+972547803016">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.6 15.6 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11.4 11.4 0 003.6.58 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.58 3.6 1 1 0 01-.24 1L6.6 10.8z"/></svg>
+      התקשרו עכשיו
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-inner">
+    <div class="hero-copy reveal">
+      <span class="hero-pill"><span class="dot" aria-hidden="true"></span>מכון מיכאל · ריפוי בעיסוק לילדים</span>
+      <h1 id="hero-title">הכל מתחיל <span class="mark">בחיבור</span></h1>
+      <p class="lead">אבחון וטיפול בריפוי בעיסוק לילדים — מוטוריקה, כתיבה, ויסות חושי, תפקודי יומיום וטיפול בילדים על הרצף האוטיסטי. בקליניקה חמה ומאובזרת בשוהם.</p>
+      <div class="hero-cta">
+        <a class="btn btn-call" href="tel:+972547803016">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.6 15.6 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11.4 11.4 0 003.6.58 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.58 3.6 1 1 0 01-.24 1L6.6 10.8z"/></svg>
+          התקשרו עכשיו
+        </a>
+        <a class="btn btn-wa" href="https://wa.me/972547803016" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.87 11.87 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.748-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          שלחו וואטסאפ
+        </a>
+      </div>
+    </div>
+    <figure class="hero-figure reveal">
+      <img class="ph" src="images/hero.jpg" width="600" height="400" loading="eager"
+           alt="ארז המטפל וילד משחקים ומתאמנים יחד על מזרן צבעוני בקליניקת ריפוי בעיסוק">
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════ TRUST STRIP ═══════════ -->
+<section class="trust" aria-label="נתוני אמון">
+  <div class="wrap">
+    <ul class="trust-grid">
+      <li class="trust-item"><div class="n">קופות החולים</div><div class="l">מפוקח ומוכר על ידן</div></li>
+      <li class="trust-item"><div class="n">משנת 2012</div><div class="l">פעילות טיפולית רציפה</div></li>
+      <li class="trust-item"><div class="n">15+</div><div class="l">שנות ניסיון טיפולי</div></li>
+      <li class="trust-item"><div class="n">אלפי</div><div class="l">ילדים והורים מלווים</div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══════════ SERVICES ═══════════ -->
+<section class="sec" id="services" aria-labelledby="services-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">תחומי הטיפול</span>
+      <h2 id="services-title">טיפול מותאם לכל ילד וילדה</h2>
+      <p>מענה מקצועי על פני מגוון רחב של תחומים התפתחותיים ותפקודיים — באבחון מדויק ובתכנית אישית.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal"><div class="ic ic-a" aria-hidden="true">🤸</div><h3>מוטוריקה גסה</h3><p>חיזוק תשתית גופנית, שיווי משקל, תיאום בין צידי הגוף ותכנון תנועה — בגינת המשחקים ובמשחקי כדור.</p></article>
+      <article class="card reveal"><div class="ic ic-b" aria-hidden="true">✂️</div><h3>מוטוריקה עדינה</h3><p>חיזוק שרירי כף היד והאצבעות ושיפור תפקודים עדינים — גזירה, השחלה, כפתורים וצביעה מדויקת.</p></article>
+      <article class="card reveal"><div class="ic ic-c" aria-hidden="true">✏️</div><h3>ציור וכתיבה</h3><p>ביסוס אחיזת עיפרון תפקודית, ויסות לחץ, יד דומיננטית, קצב כתיבה ועיצוב אותיות מותאם לשורה.</p></article>
+      <article class="card reveal"><div class="ic ic-d" aria-hidden="true">🪥</div><h3>תפקודי יומיום</h3><p>לבישה, אכילה, רחצה והתארגנות בוקר וערב — לעצמאות יומיומית יעילה ובטוחה בבית ובמסגרת.</p></article>
+      <article class="card reveal"><div class="ic ic-e" aria-hidden="true">🌈</div><h3>ויסות חושי</h3><p>איזון תגובות לגירויי מגע, תנועה וקול, הרחבת טווח ההתמודדות והפחתת רגישות-יתר או חיפוש-יתר.</p></article>
+      <article class="card reveal"><div class="ic ic-f" aria-hidden="true">🧩</div><h3>חשיבה ותכנון</h3><p>אסטרטגיות לפתרון בעיות, בנייה לפי דגם, השלמת רצפים, חשיבה חשבונית והתארגנות במטלות.</p></article>
+      <article class="card reveal"><div class="ic ic-a" aria-hidden="true">🎲</div><h3>כישורי משחק</h3><p>משחק לפי תורות, התמודדות עם ניצחון והפסד, פיתוח דמיון וחיבור חברתי עם בני הגיל ועם ההורים.</p></article>
+      <article class="card reveal"><div class="ic ic-c" aria-hidden="true">💬</div><h3>אוטיזם ותקשורת</h3><p>קידום יכולות תקשורתיות מגיל שנה ועד בגרות, בניית אמון, חשיבה גמישה ומיתון נוקשות ואימפולסיביות.</p></article>
+      <article class="card reveal"><div class="ic ic-d" aria-hidden="true">🎒</div><h3>מוכנות לכיתה א׳</h3><p>הכנה רגשית ותפקודית למסגרת — קשב, התמדה במשימה, מיומנויות גרפיות ועצמאות לקראת בית הספר.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ AUTISM FOCUS ═══════════ -->
+<section class="sec autism" id="autism" aria-labelledby="autism-title">
+  <div class="wrap autism-grid">
+    <div class="autism-copy reveal">
+      <span class="eyebrow">טיפול בילדים על הרצף</span>
+      <h2 id="autism-title">תקשורת, רק אחרת</h2>
+      <p>ילדים על הרצף האוטיסטי מתקשרים בדרכם שלהם. אנחנו לומדים את השפה הזו, בונים אמון בקצב של הילד ומרחיבים משם את היכולת לחבר, לשתף וללמוד — בגישה התפתחותית ורגשית (DIR/Floortime), מגיל שנה ועד בגרות.</p>
+    </div>
+    <ul class="autism-list reveal">
+      <li><span class="check" aria-hidden="true">✓</span><span class="txt">טיפול התפתחותי DIR/Floortime</span></li>
+      <li><span class="check" aria-hidden="true">✓</span><span class="txt">בניית תקשורת ושפה משותפת</span></li>
+      <li><span class="check" aria-hidden="true">✓</span><span class="txt">ויסות חושי ורגשי</span></li>
+      <li><span class="check" aria-hidden="true">✓</span><span class="txt">גמישות מחשבתית והפחתת נוקשות</span></li>
+      <li><span class="check" aria-hidden="true">✓</span><span class="txt">כישורים חברתיים ומשחק</span></li>
+      <li><span class="check" aria-hidden="true">✓</span><span class="txt">הדרכת הורים וליווי לאורך הדרך</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══════════ ABOUT EREZ ═══════════ -->
+<section class="sec" id="about" aria-labelledby="about-title">
+  <div class="wrap about-grid">
+    <figure class="about-figure reveal">
+      <img class="ph" src="images/erez.jpg" width="500" height="500" loading="lazy"
+           alt="ארז, מטפל בריפוי בעיסוק במכון מיכאל, מחייך בקליניקה">
+    </figure>
+    <div class="about-copy reveal">
+      <span class="eyebrow">על ארז</span>
+      <h2 id="about-title">הכל מתחיל <span class="mark">בחיבור</span></h2>
+      <p>אני מאמין שטיפול מצליח כשהילד אוהב לבוא אליו ונהנה ממנו — וכשהמטפל מוצא מקום בליבו לאהוב את הילד. מתוך החיבור הזה נבנים האמון, הסקרנות והרצון להתקדם.</p>
+      <p>בכל ילד אני מחפש את נקודת ההנעה האישית, ומשם בונה יחד איתו ועם ההורים תכנית טיפול חווייתית ומדויקת.</p>
+      <p class="quote">"כדי שילד יתקדם, קודם הוא צריך להרגיש שרואים אותו."</p>
+      <ul class="creds">
+        <li><span class="b" aria-hidden="true">🎓</span>בוגר ריפוי בעיסוק, אוניברסיטת חיפה</li>
+        <li><span class="b" aria-hidden="true">🏥</span>ניסיון קליני רב-שנים במסגרת קופות החולים</li>
+        <li><span class="b" aria-hidden="true">🧠</span>התמחות בגישת DIR ובטיפול בילדים על הרצף האוטיסטי</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ TESTIMONIALS ═══════════ -->
+<section class="sec" id="testimonials" aria-labelledby="testi-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">המלצות</span>
+      <h2 id="testi-title">מה הורים מספרים</h2>
+    </div>
+    <div class="t-cards">
+      <figure class="t-card reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>מומלץ בחום! הבן שלי סגר את הפער במהרה ואף התקדם, והכול בהנאה גדולה. מעבר למקצועיות, לארז גישה מדהימה לילדים והתוצאות לא איחרו לבוא. תודה!</blockquote>
+        <figcaption class="who">רעות מידן</figcaption>
+      </figure>
+
+      <figure class="t-card reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>ממליצה בחום על ארז שרייבר. מקצועי מאוד, יש לו גישה מדהימה לילדים. קשוב לצרכי הילד ומנחה את ההורים. הבן שלי מאוד התקדם בזכותו.</blockquote>
+        <figcaption class="who">קרן רחמים חרמוני</figcaption>
+      </figure>
+
+      <figure class="t-card reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>לארז היקר שלנו, בפאראפרזה לשאלה "למה יש יום הולדת רק פעם בשנה?" — אייל שואל: "למה יש ארז רק פעם בשבוע?" תודה על החוויה המלמדת ועל שלוותך האינסופית. תודה שהפכת את המוכנות לכיתה א' לחוויה כיפית, כך שאייל מחכה כבר לעלות לכיתה. אין כמו ילדים לזהות רגשות שבאים מהנשמה.</blockquote>
+        <figcaption class="who">דורית ואייל</figcaption>
+      </figure>
+
+      <figure class="t-card reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>ארז יקר! תודה רבה על תקופה נפלאה, על שעות של סבלנות, לימוד, חיוך, פרגון, ביטחון, עצה ומילה טובה. בננו התעצם, גדל, למד והתקדם במוטוריקה ובפעילותו הודות להשקעתך הרבה. לנו נותר לומר תודה — וכמובן ממליצים בחום!</blockquote>
+        <figcaption class="who">אליהו וליבי גואטה</figcaption>
+      </figure>
+
+      <figure class="t-card reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>בני למד אצל ארז במשך מספר חודשים. ארז קלט אותו בצורה נכונה ומיטבית וקידם אותו מאוד — הן מבחינת המוטוריקה הגסה והן מבחינת הבנת המשחק הדמיוני. לאורך כל השיעורים ארז פעל רבות מאחורי הקלעים כדי לעזור לנו בקידום תהליכים בהתפתחות הילד, ולפני ואחרי כל שיעור שוחחנו על ההתקדמות ועל מה אפשר לעשות בבית. ארז האיר לנו את הדרך. אנו מודים לו מאוד וממליצים לכל מי שצריך מרפא בעיסוק לפנות אליו.</blockquote>
+        <figcaption class="who">לימור ברג</figcaption>
+      </figure>
+
+      <figure class="t-card reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>ארז יקר, בסיומה של תקופה אנחנו רוצים לומר תודה. אורטל התחבר אליך כבר בפגישה הראשונה וחיכה להגיע גם לפגישה הבאה. עברנו איתך תקופה קצרה עם הרבה משמעות, למידה והתקדמות. תודה על היחס החם, החוויה הנעימה, הלימוד וההכוונה. תודה על הרעיונות הקטנים שבשבילנו היו מאוד גדולים, ועל חלקך בקידומו של בננו היקר. יישר כוח על עשייתך.</blockquote>
+        <figcaption class="who">א.ג ומשפחתו</figcaption>
+      </figure>
+
+      <figure class="t-card reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>בנותינו, יעל ומיכל, פגשו אותך לראשונה בקבוצת הכנה לכיתה א'. כבר מהפגישה הראשונה הן יצאו עם עיניים בורקות ותחושה שהן ממש בוגרות. ניכר היה שהמפגש איתך היה נעים, זורם ומצמיח. אנחנו האמהות, שצפינו מהצד, לא יכולנו להפסיק להתפעל מהדרך הנינוחה והמקצועית שבה הדרכת אותן. בלטה הרגישות שבה פנית אליהן, אפשרת להן להראות את יכולותיהן מבלי לחשוש לחשוף את קשייהן. התפעלנו מהאמפתיה ומהאמונה בכוחותיהן. יחסך החם, הלבבי, והאמירות בגובה העיניים נטעו בהן ביטחון ותחושה של חדוות עשייה. מקווים להתראות בהמשך בקבוצות נוספות.</blockquote>
+        <figcaption class="who">משפחת ר' (יעל) ומשפחת מ' (מיכל)</figcaption>
+      </figure>
+
+      <figure class="t-card reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <blockquote>לארז שרייבר, ברצוננו להביע תודה כנה על הטיפול המדהים במתן שלנו. הגענו למכון בגלל בעיה בתחושתיות. מתן, ילד שאינו נפתח ואינו מתחבר בקלות — אבל איתך החיבור היה מיידי. הילד פשוט התאהב בך וחיכה למפגשים שהתנהלו באווירה של משחק וכיף, הנאה צרופה וצחוק. ידעת איך לדבר עם מתן, לדובב אותו ולגרום לו לעשות דברים שלא היה מעז לפני כן — הכול תוך פרגון והמון חיזוקים חיוביים שתרמו לביטחון העצמי במקביל לטיפול התחושתי. הבאת רעיונות יצירתיים ואף נתת לנו הכוונה להמשך מול גורמים רלוונטיים. תענוג לזכות ליחס כזה במסגרת הרפואה הציבורית. בתודה והערכה רבה.</blockquote>
+        <figcaption class="who">כרמית ויריב ר.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CLINIC ═══════════ -->
+<section class="sec clinic" id="clinic" aria-labelledby="clinic-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">הקליניקה</span>
+      <h2 id="clinic-title">מרחב שכיף לחזור אליו</h2>
+    </div>
+    <div class="clinic-gallery reveal">
+      <figure class="g1"><img class="ph" src="images/clinic-1.jpg" width="600" height="400" loading="lazy" alt="מרחב הטיפול הראשי בקליניקה עם ציוד מוטורי וצבעוני"></figure>
+      <figure class="g2"><img class="ph" src="images/clinic-2.jpg" width="300" height="200" loading="lazy" alt="פינת משחק ויצירה שולחנית בקליניקה"></figure>
+      <figure class="g3"><img class="ph" src="images/clinic-3.jpg" width="300" height="200" loading="lazy" alt="מתקני טיפוס ונדנדות לעבודה על מוטוריקה גסה וויסות חושי"></figure>
+    </div>
+    <p class="clinic-text reveal">הקליניקה תוכננה כדי שילדים ירצו להיכנס אליה: מרחב חם, מאובזר ובטוח, עם ציוד מוטורי, חושי ויצירתי שמזמין משחק. כאן הטיפול נראה כמו כיף — וזו בדיוק הכוונה.</p>
+  </div>
+</section>
+
+<!-- ═══════════ CONTACT + DIRECTIONS ═══════════ -->
+<section class="sec" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">צור קשר</span>
+      <h2 id="contact-title">נשמח להכיר ולכוון אתכם</h2>
+      <p>מתלבטים אם ריפוי בעיסוק מתאים לילד/ה? התקשרו או שלחו וואטסאפ — ונחזור אליכם בהקדם.</p>
+    </div>
+    <div class="contact-grid">
+
+      <div class="contact-card reveal">
+        <h3>דברו איתנו</h3>
+        <div class="contact-line">
+          <span class="ib" aria-hidden="true">📞</span>
+          <span>טלפון:&nbsp;<a href="tel:+972547803016">054-780-3016</a></span>
+        </div>
+        <div class="contact-line">
+          <span class="ib" aria-hidden="true">💬</span>
+          <span>וואטסאפ:&nbsp;<a href="https://wa.me/972547803016" target="_blank" rel="noopener">שליחת הודעה</a></span>
+        </div>
+
+        <div class="branch" style="margin-top:22px">
+          <h4>שעות פתיחה</h4>
+          <!-- עדכנו את השעות בהתאם -->
+          <div class="hours">
+            <div><span>ראשון–חמישי</span><span>08:00–19:00</span></div>
+            <div><span>שישי</span><span>08:00–13:00</span></div>
+            <div><span>שבת</span><span>סגור</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card reveal">
+        <h3>איך מגיעים</h3>
+
+        <div class="branch">
+          <h4>הקליניקה בשוהם</h4>
+          <div class="contact-line" style="margin:8px 0">
+            <span class="ib" aria-hidden="true">📍</span>
+            <span class="addr">לכיש 80, שוהם</span>
+          </div>
+          <p class="dir">חניה נוחה בסמוך לכניסה, וגישה נגישה למרחב הטיפול.</p>
+          <a class="map-link" href="https://maps.google.com/?q=לכיש+80+שוהם" target="_blank" rel="noopener">פתחו בניווט ←</a>
+          <iframe class="map-embed"
+            src="https://maps.google.com/maps?q=%D7%9C%D7%9B%D7%99%D7%A9%2080%20%D7%A9%D7%95%D7%94%D7%9D&z=15&hl=he&output=embed"
+            title="מפת מיקום הקליניקה — לכיש 80, שוהם"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">מ</span>
+      <span>מכון מיכאל<small>ריפוי בעיסוק לילדים</small></span>
+    </div>
+    <nav class="foot-links" aria-label="ניווט תחתון">
+      <a href="#services">תחומי טיפול</a>
+      <a href="#autism">אוטיזם</a>
+      <a href="#about">על ארז</a>
+      <a href="#testimonials">המלצות</a>
+      <a href="#contact">צור קשר</a>
+    </nav>
+    <div class="copy">© <span id="yr">2026</span> מכון מיכאל · ריפוי בעיסוק לילדים · שוהם · משנת 2012 · כל הזכויות שמורות</div>
+  </div>
+</footer>
+
+<!-- ═══════════ FLOATING WHATSAPP (דסקטופ) ═══════════ -->
+<a class="wa-float" href="https://wa.me/972547803016" target="_blank" rel="noopener" aria-label="שליחת הודעת וואטסאפ למכון מיכאל">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.87 11.87 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.748-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<!-- ═══════════ STICKY MOBILE CTA ═══════════ -->
+<nav class="cta-bar" aria-label="פעולות מהירות">
+  <a class="btn btn-call" href="tel:+972547803016">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.6 15.6 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11.4 11.4 0 003.6.58 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.58 3.6 1 1 0 01-.24 1L6.6 10.8z"/></svg>
+    התקשרו
+  </a>
+  <a class="btn btn-wa" href="https://wa.me/972547803016" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.87 11.87 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.748-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    וואטסאפ
+  </a>
+</nav>
+
+<script>
+// שנה נוכחית בפוטר
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// חשיפה הדרגתית בגלילה (מכבד prefers-reduced-motion דרך ה-CSS)
+const reveals = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .14 });
+  reveals.forEach(el => io.observe(el));
+} else {
+  reveals.forEach(el => el.classList.add('in'));
+}
+</script>
+</body>
+</html>
