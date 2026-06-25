@@ -6,9 +6,13 @@
 
 <!-- ════════════════════════════════════════════════════════════════
      מכון מיכאל · דף נחיתה — ריפוי בעיסוק לילדים
-     להחלפת תמונות: צרו תיקייה בשם images/ לצד הקובץ והעלו אליה
-     hero.jpg · erez.jpg · clinic-1.jpg · clinic-2.jpg · clinic-3.jpg
-     לפני העלייה מוצג placeholder מעוצב עם הטקסט החלופי (alt).
+     התמונות נטענות מתיקיית images/ שלצד הקובץ:
+       hero.jpg ........ ארז עם הילדים (ראש העמוד)
+       erez.png ........ דיוקן ארז שקוף (סעיף "על ארז")
+       clinic-room/tramp/swing/desk/hoop.jpg .. גלריית הקליניקה
+       circle-kids/mom/paint/ladder.jpg ....... עיגולי סעיף האוטיזם
+       band.jpg ........ רצועת באנר דקורטיבית לפני הפוטר
+     (לוגו המכון עדיין חסר — בינתיים מוצגת מונוגרמה "מ".)
      ════════════════════════════════════════════════════════════════ -->
 
 <title>מכון מיכאל | ריפוי בעיסוק לילדים — שוהם</title>
@@ -171,17 +175,24 @@ ul{list-style:none}
 .autism-copy .eyebrow{color:var(--accent-deep)}
 .autism-copy h2{font-size:clamp(1.7rem,4.4vw,2.5rem);font-weight:800;margin-bottom:14px}
 .autism-copy p{color:var(--ink-soft);font-size:1.1rem}
-.autism-list{display:grid;grid-template-columns:1fr;gap:12px;margin-top:8px}
+.autism-list{display:grid;grid-template-columns:1fr;gap:12px;margin-top:22px}
 .autism-list li{display:flex;align-items:flex-start;gap:12px;background:var(--white);
   border-radius:var(--r-sm);padding:16px 18px;box-shadow:var(--shadow-soft);
   border-right:4px solid var(--primary);font-weight:600}
 .autism-list .check{color:var(--primary-deep);font-weight:800;flex-shrink:0;margin-top:1px}
 .autism-list span.txt{font-weight:500;color:var(--ink-soft)}
+.autism-visual{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:380px;margin:6px auto 0}
+.autism-visual .circ{aspect-ratio:1;border-radius:50%;overflow:hidden;border:5px solid var(--white);
+  box-shadow:var(--shadow-soft);background:var(--primary-soft)}
+.autism-visual .circ img{width:100%;height:100%;object-fit:cover}
+.autism-visual .circ:nth-child(1),.autism-visual .circ:nth-child(4){transform:translateY(-12px)}
+.autism-visual .circ:nth-child(2),.autism-visual .circ:nth-child(3){transform:translateY(12px)}
 
 /* ═══ About Erez ═══ */
 .about-grid{display:grid;grid-template-columns:1fr;gap:34px;align-items:center}
 .about-figure{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);min-height:340px}
 .about-figure .ph{min-height:340px;background:linear-gradient(135deg,#FBDDD2,#F2C9A6)}
+.about-figure .cutout{object-fit:contain;object-position:center bottom;padding-top:22px}
 .about-copy h2{font-size:clamp(1.7rem,4.4vw,2.4rem);font-weight:800;margin-bottom:14px}
 .about-copy h2 .mark{color:var(--primary-deep)}
 .about-copy p{color:var(--ink-soft);font-size:1.08rem;margin-bottom:14px}
@@ -208,8 +219,6 @@ ul{list-style:none}
 .clinic-gallery{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:30px}
 .clinic-gallery figure{border-radius:var(--r-md);overflow:hidden;box-shadow:var(--shadow-soft);min-height:200px}
 .clinic-gallery .ph{min-height:200px}
-.clinic-gallery .g2 .ph{background:linear-gradient(135deg,#FBDDD2,var(--accent-soft))}
-.clinic-gallery .g3 .ph{background:linear-gradient(135deg,#E8F0DC,var(--primary-soft))}
 .clinic-text{max-width:720px;margin:0 auto;text-align:center;color:var(--ink-soft);font-size:1.12rem}
 
 /* ═══ Contact ═══ */
@@ -233,6 +242,11 @@ ul{list-style:none}
 .hours div{display:flex;justify-content:space-between;gap:14px;
   border-bottom:1px dashed rgba(45,58,56,.14);padding:6px 0}
 .hours div span:last-child{font-weight:700}
+
+/* ═══ Decorative band ═══ */
+.band{height:130px;background:url("images/band.jpg") center bottom/cover no-repeat;
+  background-color:#DCEBF6}
+@media(min-width:860px){.band{height:190px}}
 
 /* ═══ Footer ═══ */
 .site-foot{background:var(--ink);color:rgba(255,255,255,.72);padding:40px 0 96px;text-align:center}
@@ -267,9 +281,8 @@ ul{list-style:none}
   .trust-grid{grid-template-columns:repeat(4,1fr)}
   .autism-list{grid-template-columns:1fr 1fr}
   .t-cards{grid-template-columns:1fr 1fr}
-  .clinic-gallery{grid-template-columns:2fr 1fr 1fr}
-  .clinic-gallery .g1{grid-row:span 2}
-  .clinic-gallery .g1 .ph{min-height:416px}
+  .clinic-gallery{grid-template-columns:repeat(2,1fr)}
+  .clinic-gallery .g1{grid-column:span 2}
   .contact-grid{grid-template-columns:1fr 1fr}
   .t-cards{columns:2}
 }
@@ -279,8 +292,11 @@ ul{list-style:none}
   .hero-figure{margin-top:0}
   .hero-figure .ph,.hero-figure{min-height:400px}
   .cards{grid-template-columns:repeat(3,1fr)}
-  .autism-grid{grid-template-columns:1fr 1.1fr;gap:48px}
+  .autism-grid{grid-template-columns:1.15fr .85fr;gap:48px}
   .about-grid{grid-template-columns:.85fr 1.15fr;gap:50px}
+  .clinic-gallery{grid-template-columns:repeat(4,1fr)}
+  .clinic-gallery .g1{grid-column:span 2;grid-row:span 2}
+  .clinic-gallery .g1 .ph{min-height:416px}
   .head-nav{display:flex}
   .head-call{display:inline-flex}
   .t-cards{columns:3}
@@ -345,8 +361,8 @@ ul{list-style:none}
       </div>
     </div>
     <figure class="hero-figure reveal">
-      <img class="ph" src="images/hero.jpg" width="600" height="400" loading="eager"
-           alt="ארז המטפל וילד משחקים ומתאמנים יחד על מזרן צבעוני בקליניקת ריפוי בעיסוק">
+      <img class="ph" src="images/hero.jpg" width="600" height="600" loading="eager"
+           alt="ארז, מטפל בריפוי בעיסוק במכון מיכאל, מחבק שני ילדים מחייכים">
     </figure>
   </div>
 </section>
@@ -388,19 +404,27 @@ ul{list-style:none}
 <!-- ═══════════ AUTISM FOCUS ═══════════ -->
 <section class="sec autism" id="autism" aria-labelledby="autism-title">
   <div class="wrap autism-grid">
-    <div class="autism-copy reveal">
-      <span class="eyebrow">טיפול בילדים על הרצף</span>
-      <h2 id="autism-title">תקשורת, רק אחרת</h2>
-      <p>ילדים על הרצף האוטיסטי מתקשרים בדרכם שלהם. אנחנו לומדים את השפה הזו, בונים אמון בקצב של הילד ומרחיבים משם את היכולת לחבר, לשתף וללמוד — בגישה התפתחותית ורגשית (DIR/Floortime), מגיל שנה ועד בגרות.</p>
+    <div class="autism-main reveal">
+      <div class="autism-copy">
+        <span class="eyebrow">טיפול בילדים על הרצף</span>
+        <h2 id="autism-title">תקשורת, רק אחרת</h2>
+        <p>ילדים על הרצף האוטיסטי מתקשרים בדרכם שלהם. אנחנו לומדים את השפה הזו, בונים אמון בקצב של הילד ומרחיבים משם את היכולת לחבר, לשתף וללמוד — בגישה התפתחותית ורגשית (DIR/Floortime), מגיל שנה ועד בגרות.</p>
+      </div>
+      <ul class="autism-list">
+        <li><span class="check" aria-hidden="true">✓</span><span class="txt">טיפול התפתחותי DIR/Floortime</span></li>
+        <li><span class="check" aria-hidden="true">✓</span><span class="txt">בניית תקשורת ושפה משותפת</span></li>
+        <li><span class="check" aria-hidden="true">✓</span><span class="txt">ויסות חושי ורגשי</span></li>
+        <li><span class="check" aria-hidden="true">✓</span><span class="txt">גמישות מחשבתית והפחתת נוקשות</span></li>
+        <li><span class="check" aria-hidden="true">✓</span><span class="txt">כישורים חברתיים ומשחק</span></li>
+        <li><span class="check" aria-hidden="true">✓</span><span class="txt">הדרכת הורים וליווי לאורך הדרך</span></li>
+      </ul>
     </div>
-    <ul class="autism-list reveal">
-      <li><span class="check" aria-hidden="true">✓</span><span class="txt">טיפול התפתחותי DIR/Floortime</span></li>
-      <li><span class="check" aria-hidden="true">✓</span><span class="txt">בניית תקשורת ושפה משותפת</span></li>
-      <li><span class="check" aria-hidden="true">✓</span><span class="txt">ויסות חושי ורגשי</span></li>
-      <li><span class="check" aria-hidden="true">✓</span><span class="txt">גמישות מחשבתית והפחתת נוקשות</span></li>
-      <li><span class="check" aria-hidden="true">✓</span><span class="txt">כישורים חברתיים ומשחק</span></li>
-      <li><span class="check" aria-hidden="true">✓</span><span class="txt">הדרכת הורים וליווי לאורך הדרך</span></li>
-    </ul>
+    <div class="autism-visual reveal" aria-hidden="true">
+      <span class="circ"><img src="images/circle-kids.jpg" alt="" loading="lazy"></span>
+      <span class="circ"><img src="images/circle-mom.jpg" alt="" loading="lazy"></span>
+      <span class="circ"><img src="images/circle-paint.jpg" alt="" loading="lazy"></span>
+      <span class="circ"><img src="images/circle-ladder.jpg" alt="" loading="lazy"></span>
+    </div>
   </div>
 </section>
 
@@ -408,8 +432,8 @@ ul{list-style:none}
 <section class="sec" id="about" aria-labelledby="about-title">
   <div class="wrap about-grid">
     <figure class="about-figure reveal">
-      <img class="ph" src="images/erez.jpg" width="500" height="500" loading="lazy"
-           alt="ארז, מטפל בריפוי בעיסוק במכון מיכאל, מחייך בקליניקה">
+      <img class="ph cutout" src="images/erez.png" width="500" height="500" loading="lazy"
+           alt="ארז, מטפל בריפוי בעיסוק במכון מיכאל">
     </figure>
     <div class="about-copy reveal">
       <span class="eyebrow">על ארז</span>
@@ -493,9 +517,11 @@ ul{list-style:none}
       <h2 id="clinic-title">מרחב שכיף לחזור אליו</h2>
     </div>
     <div class="clinic-gallery reveal">
-      <figure class="g1"><img class="ph" src="images/clinic-1.jpg" width="600" height="400" loading="lazy" alt="מרחב הטיפול הראשי בקליניקה עם ציוד מוטורי וצבעוני"></figure>
-      <figure class="g2"><img class="ph" src="images/clinic-2.jpg" width="300" height="200" loading="lazy" alt="פינת משחק ויצירה שולחנית בקליניקה"></figure>
-      <figure class="g3"><img class="ph" src="images/clinic-3.jpg" width="300" height="200" loading="lazy" alt="מתקני טיפוס ונדנדות לעבודה על מוטוריקה גסה וויסות חושי"></figure>
+      <figure class="g1"><img class="ph" src="images/clinic-room.jpg" width="600" height="400" loading="lazy" alt="מרחב הטיפול בקליניקה — סולם שוודי, טרמפולינה, כדור פיזיו וערכות משחק"></figure>
+      <figure><img class="ph" src="images/clinic-tramp.jpg" width="300" height="200" loading="lazy" alt="שני ילדים קופצים בשמחה על טרמפולינה במכון"></figure>
+      <figure><img class="ph" src="images/clinic-swing.jpg" width="300" height="200" loading="lazy" alt="ילד נתלה ומתנדנד על מתקן לעבודה על מוטוריקה גסה"></figure>
+      <figure><img class="ph" src="images/clinic-desk.jpg" width="300" height="200" loading="lazy" alt="פינת יצירה שולחנית עם עפרונות, מספריים וכיסאות ילדים"></figure>
+      <figure><img class="ph" src="images/clinic-hoop.jpg" width="300" height="200" loading="lazy" alt="סל קליעה וטבעות צבעוניות לתרגול קואורדינציה במכון"></figure>
     </div>
     <p class="clinic-text reveal">הקליניקה תוכננה כדי שילדים ירצו להיכנס אליה: מרחב חם, מאובזר ובטוח, עם ציוד מוטורי, חושי ויצירתי שמזמין משחק. כאן הטיפול נראה כמו כיף — וזו בדיוק הכוונה.</p>
   </div>
@@ -556,6 +582,9 @@ ul{list-style:none}
 </section>
 
 </main>
+
+<!-- ═══════════ DECORATIVE BAND ═══════════ -->
+<div class="band" role="presentation" aria-hidden="true"></div>
 
 <!-- ═══════════ FOOTER ═══════════ -->
 <footer class="site-foot">
