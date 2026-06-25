@@ -144,7 +144,7 @@ ul{list-style:none}
 .hero h1 .mark::after{content:"";position:absolute;right:0;left:0;bottom:.08em;height:.22em;
   background:var(--accent);opacity:.38;border-radius:8px;z-index:-1}
 .hero .lead{font-size:1.22rem;color:var(--ink-soft);max-width:560px;margin:18px 0 30px}
-.hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+.hero-cta{display:none;flex-wrap:wrap;gap:14px}   /* במובייל מוסתר — הפעולות קיימות בסרגל הדביק התחתון */
 .hero-figure{margin-top:46px;border-radius:var(--r-lg);overflow:hidden;
   box-shadow:var(--shadow);min-height:300px;position:relative}
 .hero-figure .ph{min-height:300px;font-size:1.05rem;padding:24px;text-align:center;align-content:center}
@@ -291,6 +291,7 @@ ul{list-style:none}
   .hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
   .hero-figure{margin-top:0}
   .hero-figure .ph,.hero-figure{min-height:400px}
+  .hero-cta{display:flex}            /* בדסקטופ הכפתורים חוזרים — אין סרגל דביק */
   .cards{grid-template-columns:repeat(3,1fr)}
   .autism-grid{grid-template-columns:1.15fr .85fr;gap:48px}
   .about-grid{grid-template-columns:.85fr 1.15fr;gap:50px}
