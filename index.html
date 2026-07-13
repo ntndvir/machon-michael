@@ -16,7 +16,7 @@
      ════════════════════════════════════════════════════════════════ -->
 
 <title>מכון מיכאל | ריפוי בעיסוק לילדים — שוהם</title>
-<meta name="description" content="מכון מיכאל — קליניקה לריפוי בעיסוק לילדים בשוהם. אבחון וטיפול במוטוריקה, גרפו-מוטוריקה, ויסות חושי, תפקודי יומיום וטיפול בילדים על הרצף האוטיסטי. מפוקח ע״י קופות החולים, משנת 2012.">
+<meta name="description" content="מכון מיכאל — קליניקה לריפוי בעיסוק לילדים בשוהם. אבחון וטיפול במוטוריקה, גרפו-מוטוריקה, ויסות חושי, תפקודי יומיום וטיפול בילדים על הרצף האוטיסטי. מוכר ע״י קופות החולים, משנת 2012.">
 <meta name="theme-color" content="#FBF6EE">
 
 <!-- Open Graph -->
@@ -24,7 +24,7 @@
 <meta property="og:locale" content="he_IL">
 <meta property="og:site_name" content="מכון מיכאל">
 <meta property="og:title" content="מכון מיכאל | ריפוי בעיסוק לילדים">
-<meta property="og:description" content="הכל מתחיל בחיבור. אבחון וטיפול בריפוי בעיסוק לילדים בשוהם. מפוקח ע״י קופות החולים, פעיל משנת 2012.">
+<meta property="og:description" content="הכל מתחיל בחיבור. אבחון וטיפול בריפוי בעיסוק לילדים בשוהם. מוכר ע״י קופות החולים, פעיל משנת 2012.">
 <meta property="og:image" content="images/hero.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -188,6 +188,12 @@ ul{list-style:none}
 .autism-visual .circ:nth-child(1),.autism-visual .circ:nth-child(4){transform:translateY(-12px)}
 .autism-visual .circ:nth-child(2),.autism-visual .circ:nth-child(3){transform:translateY(12px)}
 
+/* גרסה חלופית — מוטוריקה עדינה (רקע בהיר + תמונות בצד ההפוך לקצב ויזואלי) */
+.autism-alt{background:var(--cream)}
+.autism-alt .autism-list li{border-right:4px solid var(--accent)}
+.autism-alt .autism-list .check{color:var(--accent-deep)}
+.autism-alt .autism-visual .circ{background:var(--accent-soft)}
+
 /* ═══ About Erez ═══ */
 .about-grid{display:grid;grid-template-columns:1fr;gap:34px;align-items:center}
 .about-figure{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);min-height:340px}
@@ -294,6 +300,9 @@ ul{list-style:none}
   .hero-cta{display:flex}            /* בדסקטופ הכפתורים חוזרים — אין סרגל דביק */
   .cards{grid-template-columns:repeat(3,1fr)}
   .autism-grid{grid-template-columns:1.15fr .85fr;gap:48px}
+  .autism-alt .autism-grid{grid-template-columns:.85fr 1.15fr}
+  .autism-alt .autism-main{order:2}
+  .autism-alt .autism-visual{order:1}
   .about-grid{grid-template-columns:.85fr 1.15fr;gap:50px}
   .clinic-gallery{grid-template-columns:repeat(4,1fr)}
   .clinic-gallery .g1{grid-column:span 2;grid-row:span 2}
@@ -330,6 +339,7 @@ ul{list-style:none}
     <nav class="head-nav" aria-label="ניווט ראשי">
       <a href="#services">תחומי טיפול</a>
       <a href="#autism">אוטיזם</a>
+      <a href="#fine-motor">מוטוריקה עדינה</a>
       <a href="#about">על ארז</a>
       <a href="#testimonials">המלצות</a>
       <a href="#contact">צור קשר</a>
@@ -372,9 +382,9 @@ ul{list-style:none}
 <section class="trust" aria-label="נתוני אמון">
   <div class="wrap">
     <ul class="trust-grid">
-      <li class="trust-item"><div class="n">קופות החולים</div><div class="l">מפוקח ומוכר על ידן</div></li>
+      <li class="trust-item"><div class="n">קופות החולים</div><div class="l">מוכר על ידן</div></li>
       <li class="trust-item"><div class="n">משנת 2012</div><div class="l">פעילות טיפולית רציפה</div></li>
-      <li class="trust-item"><div class="n">15+</div><div class="l">שנות ניסיון טיפולי</div></li>
+      <li class="trust-item"><div class="n">21+</div><div class="l">שנות ניסיון טיפולי</div></li>
       <li class="trust-item"><div class="n">אלפי</div><div class="l">ילדים והורים מלווים</div></li>
     </ul>
   </div>
@@ -425,6 +435,33 @@ ul{list-style:none}
       <span class="circ"><img src="images/circle-mom.jpg" alt="" loading="lazy"></span>
       <span class="circ"><img src="images/circle-paint.jpg" alt="" loading="lazy"></span>
       <span class="circ"><img src="images/circle-ladder.jpg" alt="" loading="lazy"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FINE MOTOR FOCUS ═══════════ -->
+<section class="sec autism autism-alt" id="fine-motor" aria-labelledby="fine-motor-title">
+  <div class="wrap autism-grid">
+    <div class="autism-main reveal">
+      <div class="autism-copy">
+        <span class="eyebrow">קידום ופיתוח מיומנויות</span>
+        <h2 id="fine-motor-title">תנועה מדויקת, צעד אחר צעד</h2>
+        <p>כל פעולה קטנה ביומיום — מכפתור חולצה, דרך אחיזת עיפרון ועד גזירה במספריים — דורשת תיאום, סבלנות ודיוק. במכון מיכאל אנו מלווים את הילדים בפיתוח המוטוריקה העדינה מתוך משחק וחוויה, בקצב האישי שלהם ועל בסיס חוזקותיהם, כדי להעניק להם את הביטחון להצליח ולהרגיש עצמאיים בכל משימה.</p>
+      </div>
+      <ul class="autism-list">
+        <li><span class="check" aria-hidden="true">✓</span><span class="txt">שיפור אחיזה וויסות כוח (לכתיבה וציור ללא מאמץ)</span></li>
+        <li><span class="check" aria-hidden="true">✓</span><span class="txt">תפקוד יומיומי ועצמאות (רכיסת כפתורים, קשירת שרוכים, אכילה)</span></li>
+        <li><span class="check" aria-hidden="true">✓</span><span class="txt">תיאום עין-יד וקשר חזותי-מוטורי</span></li>
+        <li><span class="check" aria-hidden="true">✓</span><span class="txt">חיזוק חגורת הכתפיים ושרירי כף היד</span></li>
+        <li><span class="check" aria-hidden="true">✓</span><span class="txt">מיומנויות קו אמצע ודו-צדדיות (גזירה, השחלה, יצירה)</span></li>
+        <li><span class="check" aria-hidden="true">✓</span><span class="txt">הדרכת הורים וליווי לאורך הדרך</span></li>
+      </ul>
+    </div>
+    <div class="autism-visual reveal" aria-hidden="true">
+      <span class="circ"><img src="images/circle-paint.jpg" alt="" loading="lazy"></span>
+      <span class="circ"><img src="images/clinic-desk.jpg" alt="" loading="lazy"></span>
+      <span class="circ"><img src="images/clinic-hoop.jpg" alt="" loading="lazy"></span>
+      <span class="circ"><img src="images/circle-kids.jpg" alt="" loading="lazy"></span>
     </div>
   </div>
 </section>
@@ -597,6 +634,7 @@ ul{list-style:none}
     <nav class="foot-links" aria-label="ניווט תחתון">
       <a href="#services">תחומי טיפול</a>
       <a href="#autism">אוטיזם</a>
+      <a href="#fine-motor">מוטוריקה עדינה</a>
       <a href="#about">על ארז</a>
       <a href="#testimonials">המלצות</a>
       <a href="#contact">צור קשר</a>
