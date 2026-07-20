@@ -149,6 +149,54 @@ ul{list-style:none}
   box-shadow:var(--shadow);min-height:300px;position:relative}
 .hero-figure .ph{min-height:300px;font-size:1.05rem;padding:24px;text-align:center;align-content:center}
 
+/* ── Hero: בלוק אמונה (הדגשה), ציטוט, וכרטיס מותג ── */
+.belief{
+  position:relative;overflow:hidden;
+  background:var(--primary-soft);
+  border-right:5px solid var(--primary);
+  border-radius:var(--r-md);
+  padding:26px 24px 22px;
+  margin:22px 0 18px;
+  box-shadow:var(--shadow-soft);
+}
+.belief .belief-mark{
+  position:absolute;top:2px;right:16px;z-index:0;
+  font-family:'Rubik';font-size:3.6rem;line-height:1;
+  color:var(--primary);opacity:.22;pointer-events:none;
+}
+.belief p{position:relative;z-index:1;color:var(--ink);font-size:1.14rem;margin-bottom:10px}
+.belief p:last-child{margin-bottom:0}
+.belief p:first-of-type{font-weight:600}
+
+.hero-quote{
+  border-right:4px solid var(--accent);padding-right:16px;
+  margin:0 0 24px;font-style:italic;font-size:1.16rem;
+  font-weight:600;color:var(--ink);
+}
+
+.brand-card{
+  display:flex;align-items:flex-start;gap:14px;
+  background:var(--white);border-radius:var(--r-md);
+  border-right:5px solid var(--primary);
+  padding:18px 20px;margin-bottom:22px;
+  box-shadow:var(--shadow-soft);
+}
+.brand-card .logo{
+  width:46px;height:46px;border-radius:13px;flex-shrink:0;
+  background:var(--primary);display:grid;place-items:center;
+  color:#fff;font-family:'Rubik';font-weight:800;font-size:1.3rem;
+  box-shadow:0 6px 14px -6px rgba(62,140,132,.7);
+}
+.brand-card-txt strong{
+  display:block;font-family:'Rubik';font-weight:800;
+  font-size:1.3rem;color:var(--ink);line-height:1.2;
+}
+.brand-card-txt .brand-sub{
+  display:block;font-family:'Rubik';font-weight:600;
+  font-size:.95rem;color:var(--primary-deep);margin-top:2px;
+}
+.brand-card-txt p{color:var(--ink-soft);font-size:1rem;margin-top:8px}
+
 /* ═══ Trust strip ═══ */
 .trust{background:var(--primary-deep);color:#fff}
 .trust-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px 18px;padding:34px 0}
@@ -357,9 +405,22 @@ ul{list-style:none}
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap hero-inner">
     <div class="hero-copy reveal">
-      <span class="hero-pill"><span class="dot" aria-hidden="true"></span>מכון מיכאל · ריפוי בעיסוק לילדים</span>
+      <span class="eyebrow">על ארז</span>
       <h1 id="hero-title">הכל מתחיל <span class="mark">בחיבור</span></h1>
-      <p class="lead">אבחון וטיפול בריפוי בעיסוק לילדים — מוטוריקה, כתיבה, ויסות חושי, תפקודי יומיום וטיפול בילדים על הרצף האוטיסטי. בקליניקה חמה ומאובזרת בשוהם.</p>
+      <div class="belief">
+        <span class="belief-mark" aria-hidden="true">❝</span>
+        <p>אני מאמין שטיפול מצליח כשהילד אוהב לבוא אליו ונהנה ממנו — וכשהמטפל מוצא מקום בליבו לאהוב את הילד. מתוך החיבור הזה נבנים האמון, הסקרנות והרצון להתקדם.</p>
+        <p>בכל ילד אני מחפש את נקודת ההנעה האישית, ומשם בונה יחד איתו ועם ההורים תכנית טיפול חווייתית ומדויקת.</p>
+      </div>
+      <p class="hero-quote">"כדי שילד יתקדם, קודם הוא צריך להרגיש שרואים אותו."</p>
+      <div class="brand-card">
+        <span class="logo" aria-hidden="true">מ</span>
+        <div class="brand-card-txt">
+          <strong>מכון מיכאל</strong>
+          <span class="brand-sub">ריפוי בעיסוק לילדים · שוהם</span>
+          <p>אבחון וטיפול בריפוי בעיסוק לילדים — מוטוריקה, כתיבה, ויסות חושי, תפקודי יומיום וטיפול בילדים על הרצף האוטיסטי.</p>
+        </div>
+      </div>
       <div class="hero-cta">
         <a class="btn btn-call" href="tel:+972547803016">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.6 15.6 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11.4 11.4 0 003.6.58 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.58 3.6 1 1 0 01-.24 1L6.6 10.8z"/></svg>
@@ -475,10 +536,9 @@ ul{list-style:none}
     </figure>
     <div class="about-copy reveal">
       <span class="eyebrow">על ארז</span>
-      <h2 id="about-title">הכל מתחיל <span class="mark">בחיבור</span></h2>
-      <p>אני מאמין שטיפול מצליח כשהילד אוהב לבוא אליו ונהנה ממנו — וכשהמטפל מוצא מקום בליבו לאהוב את הילד. מתוך החיבור הזה נבנים האמון, הסקרנות והרצון להתקדם.</p>
-      <p>בכל ילד אני מחפש את נקודת ההנעה האישית, ומשם בונה יחד איתו ועם ההורים תכנית טיפול חווייתית ומדויקת.</p>
-      <p class="quote">"כדי שילד יתקדם, קודם הוא צריך להרגיש שרואים אותו."</p>
+      <h2 id="about-title">הכירו את <span class="mark">ארז</span></h2>
+      <p>ארז שרייבר הוא מרפא בעיסוק בעל למעלה מ-21 שנות ניסיון קליני בעבודה עם ילדים ומשפחות. בוגר ריפוי בעיסוק מאוניברסיטת חיפה, וליווה לאורך השנים מאות ילדים במסגרת קופות החולים ובקליניקה הפרטית — במוטוריקה, גרפו-מוטוריקה, ויסות חושי ותפקודי יומיום.</p>
+      <p>מתוך אמונה בכוחו של החיבור האישי הקים ארז את מכון מיכאל בשוהם — מרחב חם ומאובזר שבו כל ילד מתקבל בגובה העיניים. הוא מתמחה בגישת DIR/Floortime ובטיפול בילדים על הרצף האוטיסטי, ומביא לכל טיפול מקצועיות, יצירתיות והמון לב.</p>
       <ul class="creds">
         <li><span class="b" aria-hidden="true">🎓</span>בוגר ריפוי בעיסוק, אוניברסיטת חיפה</li>
         <li><span class="b" aria-hidden="true">🏥</span>ניסיון קליני רב-שנים במסגרת קופות החולים</li>
