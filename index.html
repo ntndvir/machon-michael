@@ -134,14 +134,24 @@ ul{list-style:none}
 
 /* ═══ Hero ═══ */
 .hero{position:relative;padding:54px 0 70px;overflow:hidden}
-.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;z-index:0;filter:blur(6px)}
-.hero::before{width:340px;height:340px;background:radial-gradient(circle,#CFE9E3,transparent 70%);top:-120px;right:-110px;opacity:.7}
-.hero::after{width:300px;height:300px;background:radial-gradient(circle,#FBDDD2,transparent 70%);bottom:-130px;left:-100px;opacity:.7}
+.hero::before{
+  content:"";position:absolute;inset:-15% -10%;z-index:0;pointer-events:none;filter:blur(20px);
+  background:
+    radial-gradient(circle at 85% 4%, rgba(62,140,132,.5), transparent 22%),
+    radial-gradient(circle at 100% 32%, rgba(232,131,107,.46), transparent 20%),
+    radial-gradient(circle at 4% 88%, rgba(240,181,74,.42), transparent 22%),
+    radial-gradient(circle at -2% 52%, rgba(154,128,209,.42), transparent 20%),
+    radial-gradient(circle at 58% 100%, rgba(232,131,107,.36), transparent 24%),
+    radial-gradient(circle at 28% -6%, rgba(62,140,132,.36), transparent 20%);
+}
 .hero-inner{position:relative;z-index:2}
 .hero-pill{display:inline-flex;align-items:center;gap:9px;background:var(--white);
   color:var(--primary-deep);padding:8px 16px;border-radius:40px;font-weight:700;
   font-size:.92rem;box-shadow:var(--shadow-soft);margin-bottom:20px}
 .hero-pill .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--primary-deep);
+  color:#fff;padding:11px 22px;border-radius:40px;font-weight:800;font-family:'Rubik';
+  font-size:1.02rem;letter-spacing:.2px;box-shadow:var(--shadow-soft);margin-bottom:18px}
 .hero h1{font-size:clamp(2.6rem,9vw,4.6rem);font-weight:800;letter-spacing:-1px;margin-bottom:6px}
 .hero h1 .mark{position:relative;color:var(--primary-deep);white-space:nowrap}
 .hero h1 .mark::after{content:"";position:absolute;right:0;left:0;bottom:.08em;height:.22em;
@@ -171,10 +181,9 @@ ul{list-style:none}
 .belief p:last-child{margin-bottom:0}
 .belief p:first-of-type{font-weight:600}
 
-.hero-quote{
-  border-right:4px solid var(--accent);padding-right:16px;
-  margin:0 0 24px;font-style:italic;font-size:1.16rem;
-  font-weight:600;color:var(--ink);
+.belief-sign{
+  font-family:'Rubik';font-weight:700;color:var(--primary-deep);
+  font-size:1rem;margin-top:4px;
 }
 
 .brand-card{
@@ -301,6 +310,56 @@ ul{list-style:none}
   border-bottom:1px dashed rgba(45,58,56,.14);padding:6px 0}
 .hours div span:last-child{font-weight:700}
 
+/* ═══ Decorative blobs (site-wide) ═══ */
+.blobs{position:relative;overflow:hidden}
+.blobs::before{content:"";position:absolute;inset:-12% -8%;z-index:0;pointer-events:none;filter:blur(20px)}
+.blobs>.wrap{position:relative;z-index:2}
+.blobs-a::before{
+  background:
+    radial-gradient(circle at 6% 10%, rgba(62,140,132,.48), transparent 24%),
+    radial-gradient(circle at 92% 6%, rgba(232,131,107,.44), transparent 22%),
+    radial-gradient(circle at 78% 45%, rgba(240,181,74,.4), transparent 20%),
+    radial-gradient(circle at 14% 52%, rgba(154,128,209,.42), transparent 22%),
+    radial-gradient(circle at 90% 92%, rgba(62,140,132,.4), transparent 22%),
+    radial-gradient(circle at 8% 90%, rgba(232,131,107,.38), transparent 20%),
+    radial-gradient(circle at 50% 25%, rgba(240,181,74,.3), transparent 26%);
+}
+.blobs-b::before{
+  background:
+    radial-gradient(circle at 94% 12%, rgba(154,128,209,.46), transparent 22%),
+    radial-gradient(circle at 8% 8%, rgba(240,181,74,.42), transparent 22%),
+    radial-gradient(circle at 20% 48%, rgba(62,140,132,.42), transparent 20%),
+    radial-gradient(circle at 86% 50%, rgba(232,131,107,.42), transparent 22%),
+    radial-gradient(circle at 10% 92%, rgba(154,128,209,.4), transparent 22%),
+    radial-gradient(circle at 92% 88%, rgba(240,181,74,.36), transparent 20%),
+    radial-gradient(circle at 55% 70%, rgba(62,140,132,.3), transparent 26%);
+}
+
+/* ═══ Institute intro strip ═══ */
+.institute-intro{padding:12px 0 56px}
+.institute-text{max-width:760px;margin:0 auto;text-align:center;color:var(--ink-soft);font-size:1.14rem}
+
+/* ═══ Believe (manifesto) ═══ */
+.believe-list{display:grid;grid-template-columns:1fr;gap:16px;max-width:820px;margin:0 auto}
+.believe-item{background:var(--white);border-radius:var(--r-md);padding:20px 22px;
+  box-shadow:var(--shadow-soft);font-size:1.1rem;color:var(--ink);border-right:4px solid var(--primary)}
+.believe-item:nth-child(even){border-right-color:var(--accent)}
+
+/* ═══ Autism personal story ═══ */
+.autism-story{
+  position:relative;background:var(--white);border-radius:var(--r-md);
+  border-right:5px solid var(--accent);padding:24px 22px 20px;margin-top:24px;
+  box-shadow:var(--shadow-soft);
+}
+.autism-story p{color:var(--ink-soft);font-size:1.05rem;margin-bottom:12px}
+.autism-story p:last-of-type{margin-bottom:0}
+.autism-story .sign{display:block;margin-top:10px;font-family:'Rubik';font-weight:700;color:var(--accent-deep)}
+
+/* ═══ Journey (עושים דרך יחד) ═══ */
+.journey-text{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:16px;
+  color:var(--ink-soft);font-size:1.14rem;text-align:center}
+.journey-text p:first-child{color:var(--ink);font-weight:600;font-size:1.22rem}
+
 /* ═══ Decorative band ═══ */
 .band{height:130px;background:url("images/band.jpg") center bottom/cover no-repeat;
   background-color:#DCEBF6}
@@ -338,6 +397,7 @@ ul{list-style:none}
   .cards{grid-template-columns:repeat(2,1fr)}
   .trust-grid{grid-template-columns:repeat(4,1fr)}
   .autism-list{grid-template-columns:1fr 1fr}
+  .believe-list{grid-template-columns:1fr 1fr}
   .t-cards{grid-template-columns:1fr 1fr}
   .clinic-gallery{grid-template-columns:repeat(2,1fr)}
   .clinic-gallery .g1{grid-column:span 2}
@@ -390,6 +450,7 @@ ul{list-style:none}
     </a>
     <nav class="head-nav" aria-label="ניווט ראשי">
       <a href="#services">תחומי טיפול</a>
+      <a href="#believe">אני מאמין</a>
       <a href="#autism">אוטיזם</a>
       <a href="#fine-motor">מוטוריקה עדינה</a>
       <a href="#about">על ארז</a>
@@ -409,14 +470,13 @@ ul{list-style:none}
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap hero-inner">
     <div class="hero-copy reveal">
-      <span class="eyebrow">על ארז</span>
+      <span class="hero-tag">ריפוי בעיסוק לילדים · קליניקה חדשה · שוהם</span>
       <h1 id="hero-title">הכל מתחיל <span class="mark">בחיבור</span></h1>
       <div class="belief">
         <span class="belief-mark" aria-hidden="true">❝</span>
-        <p>אני מאמין שטיפול מצליח כשהילד אוהב לבוא אליו ונהנה ממנו — וכשהמטפל מוצא מקום בליבו לאהוב את הילד. מתוך החיבור הזה נבנים האמון, הסקרנות והרצון להתקדם.</p>
-        <p>בכל ילד אני מחפש את נקודת ההנעה האישית, ומשם בונה יחד איתו ועם ההורים תכנית טיפול חווייתית ומדויקת.</p>
+        <p>על מנת שטיפול יצליח, הילד צריך לאהוב לבוא לטיפול ולהנות ממנו, והמטפל צריך למצוא מקום בליבו לאהוב את הילד.</p>
+        <p class="belief-sign">ארז שרייבר · מנהל מכון מיכאל</p>
       </div>
-      <p class="hero-quote">"כדי שילד יתקדם, קודם הוא צריך להרגיש שרואים אותו."</p>
       <div class="brand-card">
         <span class="logo" aria-hidden="true"><img src="images/logo.jpg" alt=""></span>
         <div class="brand-card-txt">
@@ -443,6 +503,13 @@ ul{list-style:none}
   </div>
 </section>
 
+<!-- ═══════════ INSTITUTE INTRO ═══════════ -->
+<section class="sec institute-intro blobs blobs-a" aria-label="על המכון">
+  <div class="wrap">
+    <p class="institute-text reveal">מכון מיכאל נפתח במרץ 2012 על ידי ארז שרייבר, מרפא בעיסוק מוסמך בעל ותק רב שנים במכונים להתפתחות הילד ובמשרד החינוך. הטיפולים ניתנים לילדים עם מגוון תסמונות, קשיים תפקודיים ותקשורתיים, באופן פרטני או בקבוצות. הטיפול מתקיים בקליניקה מאובזרת ובאווירה חווייתית, מהנה ותומכת.</p>
+  </div>
+</section>
+
 <!-- ═══════════ TRUST STRIP ═══════════ -->
 <section class="trust" aria-label="נתוני אמון">
   <div class="wrap">
@@ -456,7 +523,7 @@ ul{list-style:none}
 </section>
 
 <!-- ═══════════ SERVICES ═══════════ -->
-<section class="sec" id="services" aria-labelledby="services-title">
+<section class="sec blobs blobs-a" id="services" aria-labelledby="services-title">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">תחומי הטיפול</span>
@@ -477,8 +544,25 @@ ul{list-style:none}
   </div>
 </section>
 
+<!-- ═══════════ BELIEVE (אני מאמין) ═══════════ -->
+<section class="sec believe blobs blobs-b" id="believe" aria-labelledby="believe-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">ארז שרייבר · אני מאמין</span>
+      <h2 id="believe-title">העקרונות שמנחים אותי</h2>
+    </div>
+    <div class="believe-list">
+      <p class="believe-item reveal">ילד הוא יצור להקה הזקוק להנהגה. ללא הנהגה יטול הילד עצמו את ההנהגה על חייו. זהו משא כבד מדי בשלב זה של חייו.</p>
+      <p class="believe-item reveal">יש להבדיל בין הנהגה לה נזקק הילד לבין רודנות שתיצור התנגדות, ובמקרה הגרוע ביותר – כניעה.</p>
+      <p class="believe-item reveal">הנאה משותפת מפעילות היא תנאי הכרחי להתקדמות הן בין ילד להוריו והן בין ילד למטפל.</p>
+      <p class="believe-item reveal">עבודתו החשובה של ההורה אינה בהקניית כישורים דידקטיים אלא בבניית סביבה תומכת, מסקרנת, מאתגרת ואוהבת. בהינתן התנאים הללו, יפתח הילד בעצמו סקרנות ומוטיבציה ללמידה — למידה המחוברת לנטיותיו האישיות ולרצונותיו. זוהי הלמידה אותה אנו מחפשים.</p>
+      <p class="believe-item reveal">לכל אדם זכות ליחס מכובד והוגן ללא קשר למניין שנותיו.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════ AUTISM FOCUS ═══════════ -->
-<section class="sec autism" id="autism" aria-labelledby="autism-title">
+<section class="sec autism blobs blobs-a" id="autism" aria-labelledby="autism-title">
   <div class="wrap autism-grid">
     <div class="autism-main reveal">
       <div class="autism-copy">
@@ -494,6 +578,11 @@ ul{list-style:none}
         <li><span class="check" aria-hidden="true">✓</span><span class="txt">כישורים חברתיים ומשחק</span></li>
         <li><span class="check" aria-hidden="true">✓</span><span class="txt">הדרכת הורים וליווי לאורך הדרך</span></li>
       </ul>
+      <div class="autism-story reveal">
+        <p>הפעם הראשונה שנפגשתי עם לקויות תקשורת ואוטיזם היתה הרבה לפני שהתחלתי ללמוד ריפוי בעיסוק. הגעתי לעבוד כמדריך בכפר עופרים לבוגרים עם אוטיזם. מהרגע הראשון התאהבתי. כאילו אין תקשורת אבל יש, רק אחרת. התקשורת הזו, שהיא הרבה מעבר למילים, משכה אותי אז ומושכת אותי היום.</p>
+        <p>הלכתי ללמוד ריפוי בעיסוק כי רציתי ללמוד איך לעזור לילדים ולמבוגרים האלה טוב יותר. מאז הספקתי להשלים את התואר ולעבור הכשרות מרובות בתחום: קורס DIR שהיה ונשאר הבסיס העיקרי שלי כדרך טיפולית, הכשרת משרד הבריאות לטיפול באוטיזם, קורסים מגוונים באוניברסיטאות, ובנוסף — הדרכה שבועית במשך שנים שהתמקדה בעיקר בטיפול בלקויות תקשורת.</p>
+        <span class="sign">ארז.</span>
+      </div>
     </div>
     <div class="autism-visual reveal" aria-hidden="true">
       <span class="circ"><img src="images/circle-kids.jpg" alt="" loading="lazy"></span>
@@ -505,7 +594,7 @@ ul{list-style:none}
 </section>
 
 <!-- ═══════════ FINE MOTOR FOCUS ═══════════ -->
-<section class="sec autism autism-alt" id="fine-motor" aria-labelledby="fine-motor-title">
+<section class="sec autism autism-alt blobs blobs-b" id="fine-motor" aria-labelledby="fine-motor-title">
   <div class="wrap autism-grid">
     <div class="autism-main reveal">
       <div class="autism-copy">
@@ -531,8 +620,22 @@ ul{list-style:none}
   </div>
 </section>
 
+<!-- ═══════════ JOURNEY (עושים דרך יחד) ═══════════ -->
+<section class="sec journey blobs blobs-a" id="journey" aria-labelledby="journey-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">הסיפורים שמניעים אותנו</span>
+      <h2 id="journey-title">עושים דרך. יחד.</h2>
+    </div>
+    <div class="journey-text reveal">
+      <p>כשהחיבור הנכון מתקיים, הילדים שנמנעים מלצייר מוכנים פתאום לנסות. הרי כאן מותר לטעות כמה שרוצים.</p>
+      <p>לילד שבשבילו הפסד הוא אסון נוראי — פתאום ההפסד מתגלה כחלק ממשחק. ילד שיש לו קושי לתקשר פתאום מסתכל בעיניים ונהנה מחוויה משותפת. אם לא היום, יש לנו זמן. אני כאן איתו ובשבילו — בלי תנאים — וההבנה הזו מחלחלת.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════ ABOUT EREZ ═══════════ -->
-<section class="sec" id="about" aria-labelledby="about-title">
+<section class="sec blobs blobs-b" id="about" aria-labelledby="about-title">
   <div class="wrap about-grid">
     <figure class="about-figure reveal">
       <img class="ph cutout" src="images/erez.webp" width="500" height="500" loading="lazy"
@@ -541,19 +644,20 @@ ul{list-style:none}
     <div class="about-copy reveal">
       <span class="eyebrow">על ארז</span>
       <h2 id="about-title">הכירו את <span class="mark">ארז</span></h2>
-      <p>ארז שרייבר הוא מרפא בעיסוק בעל למעלה מ-21 שנות ניסיון קליני בעבודה עם ילדים ומשפחות. בוגר ריפוי בעיסוק מאוניברסיטת חיפה, וליווה לאורך השנים מאות ילדים במסגרת קופות החולים ובקליניקה הפרטית — במוטוריקה, גרפו-מוטוריקה, ויסות חושי ותפקודי יומיום.</p>
-      <p>מתוך אמונה בכוחו של החיבור האישי הקים ארז את מכון מיכאל בשוהם — מרחב חם ומאובזר שבו כל ילד מתקבל בגובה העיניים. הוא מתמחה בגישת DIR/Floortime ובטיפול בילדים על הרצף האוטיסטי, ומביא לכל טיפול מקצועיות, יצירתיות והמון לב.</p>
+      <p>שמי ארז שרייבר, בן זוג לשמרית ואב לאוריה ומיכאל שעל שמו קרוי מכון הטיפולים שלי. זכיתי לחיות ולהתפרנס ממקצוע שאני רואה בו ייעוד והנאה. יש קסם מיוחד בחיבור נכון בין ילד, מטפל והורה. כשהקסם הזה קורה — דברים מתחילים להשתנות, ולטובה. זאת העבודה שלי.</p>
+      <p>אני בוגר החוג לריפוי בעיסוק באוניברסיטת חיפה, בעל ניסיון של למעלה מ-21 שנה כמרפא בעיסוק, מתוכם 7 שנים במכון להתפתחות הילד בקופת חולים ומאז מטפל בקליניקה הפרטית שלי בשוהם. במסגרת עבודתי אני גם מרצה ומדריך צוותים חינוכיים במסגרת עמותת עזר מציון.</p>
       <ul class="creds">
         <li><span class="b" aria-hidden="true">🎓</span>בוגר ריפוי בעיסוק, אוניברסיטת חיפה</li>
-        <li><span class="b" aria-hidden="true">🏥</span>ניסיון קליני רב-שנים במסגרת קופות החולים</li>
+        <li><span class="b" aria-hidden="true">🏥</span>למעלה מ-21 שנות ניסיון קליני, מתוכן במכון להתפתחות הילד ובקליניקה הפרטית</li>
         <li><span class="b" aria-hidden="true">🧠</span>התמחות בגישת DIR ובטיפול בילדים על הרצף האוטיסטי</li>
+        <li><span class="b" aria-hidden="true">🎤</span>מרצה ומדריך צוותים חינוכיים, עמותת עזר מציון</li>
       </ul>
     </div>
   </div>
 </section>
 
 <!-- ═══════════ TESTIMONIALS ═══════════ -->
-<section class="sec" id="testimonials" aria-labelledby="testi-title">
+<section class="sec blobs blobs-a" id="testimonials" aria-labelledby="testi-title">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">המלצות</span>
@@ -612,11 +716,11 @@ ul{list-style:none}
 </section>
 
 <!-- ═══════════ CLINIC ═══════════ -->
-<section class="sec clinic" id="clinic" aria-labelledby="clinic-title">
+<section class="sec clinic blobs blobs-b" id="clinic" aria-labelledby="clinic-title">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">הקליניקה</span>
-      <h2 id="clinic-title">מרחב שכיף לחזור אליו</h2>
+      <h2 id="clinic-title">מקום שכיף לחזור אליו</h2>
     </div>
     <div class="clinic-gallery reveal">
       <figure class="g1"><img class="ph" src="images/clinic-room.jpg" width="600" height="400" loading="lazy" alt="מרחב הטיפול בקליניקה — סולם שוודי, טרמפולינה, כדור פיזיו וערכות משחק"></figure>
@@ -625,12 +729,12 @@ ul{list-style:none}
       <figure><img class="ph" src="images/clinic-desk.jpg" width="300" height="200" loading="lazy" alt="פינת יצירה שולחנית עם עפרונות, מספריים וכיסאות ילדים"></figure>
       <figure><img class="ph" src="images/clinic-hoop.jpg" width="300" height="200" loading="lazy" alt="סל קליעה וטבעות צבעוניות לתרגול קואורדינציה במכון"></figure>
     </div>
-    <p class="clinic-text reveal">הקליניקה תוכננה כדי שילדים ירצו להיכנס אליה: מרחב חם, מאובזר ובטוח, עם ציוד מוטורי, חושי ויצירתי שמזמין משחק. כאן הטיפול נראה כמו כיף — וזו בדיוק הכוונה.</p>
+    <p class="clinic-text reveal">החיבור בין המטפל, הילד וההורים הוא החשוב ביותר. אך גם לסביבה הטיפולית יש השפעה רבה. הקליניקה במכון מיכאל היא חדשה, צבעונית ונעימה. היא מאובזרת בכל הציוד הטיפולי שיעזור גם לילד שלכם להגיע למטרות שנציב יחד. השילוב בין טיפול נכון לבין מקום שהילד מעוניין לחזור אליו הוא שילוב חשוב.</p>
   </div>
 </section>
 
 <!-- ═══════════ CONTACT + DIRECTIONS ═══════════ -->
-<section class="sec" id="contact" aria-labelledby="contact-title">
+<section class="sec blobs blobs-b" id="contact" aria-labelledby="contact-title">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">צור קשר</span>
@@ -697,6 +801,7 @@ ul{list-style:none}
     </div>
     <nav class="foot-links" aria-label="ניווט תחתון">
       <a href="#services">תחומי טיפול</a>
+      <a href="#believe">אני מאמין</a>
       <a href="#autism">אוטיזם</a>
       <a href="#fine-motor">מוטוריקה עדינה</a>
       <a href="#about">על ארז</a>
